@@ -1,0 +1,4 @@
+2022-04-19T16:48:19+00:00 CRITICAL syntax error, unexpected end of file in F:\Project\wordpress\wp-content\themes\main-theme\app\Loader.php on line 42
+
+2022-04-19T17:15:04+00:00 CRITICAL syntax error, unexpected 'while' (T_WHILE) in F:\Project\wordpress\wp-content\themes\main-theme\single.php on line 14
+
