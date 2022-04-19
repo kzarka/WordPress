@@ -2,3 +2,29 @@
 
 2022-04-19T17:15:04+00:00 CRITICAL syntax error, unexpected 'while' (T_WHILE) in F:\Project\wordpress\wp-content\themes\main-theme\single.php on line 14
 
+2022-04-19T17:44:42+00:00 CRITICAL Uncaught Error: Call to undefined function post_pagination() in F:\Project\wordpress\wp-content\themes\main-theme\app\views\pages\blog\archive.php:9
+Stack trace:
+#0 F:\Project\wordpress\wp-includes\template.php(772): require()
+#1 F:\Project\wordpress\wp-includes\template.php(716): load_template('F:\\Project\\word...', false, Array)
+#2 F:\Project\wordpress\wp-includes\general-template.php(204): locate_template(Array, true, false, Array)
+#3 F:\Project\wordpress\wp-content\themes\main-theme\app\helpers\app.php(88): get_template_part('/app/views/page...', '', Array)
+#4 F:\Project\wordpress\wp-content\themes\main-theme\app\views\layouts\blog\archive.php(4): renderTemplate('pages/blog/arch...')
+#5 F:\Project\wordpress\wp-includes\template.php(772): require('F:\\Project\\word...')
+#6 F:\Project\wordpress\wp-includes\template.php(716): load_template('F:\\Project\\word...', false, Array)
+#7 F:\Project\wordpress\wp-includes\general-template.php(204): locate_template(Array, true, false, Array)
+#8 F:\Project\wordpress\wp in F:\Project\wordpress\wp-content\themes\main-theme\app\views\pages\blog\archive.php on line 9
+
+2022-04-19T17:53:41+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function App\Controllers\PaginationController::overWritePaginator(), 1 passed in F:\Project\wordpress\wp-includes\class-wp-hook.php on line 309 and exactly 2 expected in F:\Project\wordpress\wp-content\themes\main-theme\app\Controllers\PaginationController.php:34
+Stack trace:
+#0 F:\Project\wordpress\wp-includes\class-wp-hook.php(309): App\Controllers\PaginationController->overWritePaginator('<a class="prev ...')
+#1 F:\Project\wordpress\wp-includes\plugin.php(189): WP_Hook->apply_filters('<a class="prev ...', Array)
+#2 F:\Project\wordpress\wp-includes\general-template.php(4380): apply_filters('paginate_links_...', '<a class="prev ...', Array)
+#3 F:\Project\wordpress\wp-content\themes\main-theme\app\helpers\app.php(112): paginate_links(Array)
+#4 F:\Project\wordpress\wp-content\themes\main-theme\app\views\pages\blog\archive.php(9): post_pagination()
+#5 F:\Project\wordpress\wp-includes\template.php(772): require('F:\\Project\\word...')
+#6 F:\Project\wordpress\wp-i in F:\Project\wordpress\wp-content\themes\main-theme\app\Controllers\PaginationController.php on line 34
+
+2022-04-19T17:59:53+00:00 CRITICAL syntax error, unexpected ';', expecting ')' in F:\Project\wordpress\wp-content\themes\main-theme\app\helpers\app.php on line 125
+
+2022-04-19T17:59:53+00:00 CRITICAL syntax error, unexpected ';', expecting ')' in F:\Project\wordpress\wp-content\themes\main-theme\app\helpers\app.php on line 125
+
