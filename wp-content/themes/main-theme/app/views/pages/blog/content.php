@@ -4,7 +4,7 @@
         <div class="article-title">
             <h1><?= the_title() ?></h1>
         </div>
-        <div class="article-date"> by: elomus-theme Admin - <time datetime="Wednesday, August 25, 2021 at 5:31 pm -0400"> 25/08/2021 </time>
+        <div class="article-date"> by: elomus-theme Admin - <time datetime="<?= get_the_date() ?>"> <?= get_the_date('Y/m/d') ?> </time>
         </div>
         <div class="article-description">
             <?= the_content() ?>

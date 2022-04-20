@@ -12,29 +12,36 @@
                                     <div class="flexslider oc-nivoslider our_story">
                                         <div class="oc-loading"></div>
                                         <div id="oc-inivoslider1" class="nivoSlider slides static_video">
+                                            <?php
+                                                $args = array(
+                                                    'post_type'   => 'envira',
+                                                    'orderby'     => 'ID',
+                                                    'order'       => 'ASC',
+                                                );
+                                                $the_query = new WP_Query( $args );
+                                                $post_slider = $the_query->posts[0];
+                                                $argsParent = array(
+                                                    'post_parent' => $post_slider->ID,
+                                                    'post_type'   => 'attachment',
+                                                    'post_status' => 'inherit',
+                                                    'orderby'     => 'ID',
+                                                    'order'       => 'ASC',
+                                                );
+                                                $the_query_parent = new WP_Query( $argsParent );
+                                                $postParents = $the_query_parent->posts;
+                                            ?>
+                                            
+                                            <?php
+                                                foreach($postParents as $post) {
+                                            ?>
                                             <img
                                                 style="display: none;"
                                                 class="lazyload"
-                                                data-src="//cdn.shopify.com/s/files/1/3012/8606/files/slider3-aero1-1920x846_1920x846.progressive.jpg?v=1519055913"
+                                                data-src="<?= wp_get_attachment_image_url($post->ID, $size = 'full', $icon = false) ?>"
                                                 alt=""
                                                 title="#banner1480267833382-caption1"
                                             />
-
-                                            <img
-                                                style="display: none;"
-                                                class="lazyload"
-                                                data-src="//cdn.shopify.com/s/files/1/3012/8606/files/slider2-aero1-1920x846_1920x846.progressive.jpg?v=1519055928"
-                                                alt=""
-                                                title="#banner1480267833382-caption2"
-                                            />
-
-                                            <img
-                                                style="display: none;"
-                                                class="lazyload"
-                                                data-src="//cdn.shopify.com/s/files/1/3012/8606/files/slider1-aero1-1920x846_1920x846.progressive.jpg?v=1519055942"
-                                                alt=""
-                                                title="#banner1480267833382-caption3"
-                                            />
+                                            <?php } ?>
                                         </div>
 
                                         <div id="banner1480267833382-caption1" class="banner7-caption nivo-html-caption nivo-caption move-slides-effect" data-class="slide-movetype">
