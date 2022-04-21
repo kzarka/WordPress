@@ -17,7 +17,7 @@ class NavController extends BaseController
 	public function registerHook()
 	{
 		add_action( 'pc_nav_content', array($this, 'loadHeaderPC'));
-		add_action('wp_ajax_envira_gallery_remove_image', array($this, 'deleteAttachment'), 100);
+		add_action('wp_ajax_envira_gallery_remove_image', array($this, 'deleteAttachment'), 10);
 	}
 
 	public function loadHeaderPC()
@@ -28,7 +28,7 @@ class NavController extends BaseController
 
 	public function deleteAttachment()
 	{
-		// $post_id      = absint( $_POST['post_id'] );
+		$post_id      = absint( $_POST['post_id'] );
 		$attach_id    = absint( $_POST['attachment_id'] );
 		wp_delete_attachment($attach_id);
 	}

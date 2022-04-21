@@ -12,10 +12,10 @@
                 </div>
                 <p class="articledate">
                     <i class="fa fa-clock-o" aria-hidden="true"></i>
-                    <time datetime="2021-08-25 17:31:39 -0400">08/25/21</time> / by: elomus-theme Admin
+                    <time datetime="<?= get_the_date('Y/m/d H:i:s') ?>"><?= get_the_date('Y/m/d') ?></time> / by: elomus-theme Admin
                 </p>
                 <div class="intro-content" style="padding: 0 0 10px;">
-                    <p>Lorem ipsum dolor sit amet. Integer adipiscing erat llentesque s sollicitudin pellentesque et non erat. Lorem ipsum dolor sit amet. Integer adipiscing erat eget risus Lorem ipsum dolor. Lorem ipsum</p>
+                    <p><?= the_content() ?></p>
                 </div>
                 <a class="btn readmore-page" href="/blogs/news/ladipiscing-erat-llentesque-pellentesque-eton">Read more <i class="fa fa-arrow-right" aria-hidden="true"></i>
                 </a>

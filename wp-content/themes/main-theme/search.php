@@ -6,7 +6,8 @@
 
 get_header();
 ?>
-
+<div id="content" class="site-content">
+	<div class="container">
 <main id="main" class="site-main" role="main">
 
 	<?php 
@@ -15,13 +16,13 @@ get_header();
 		<header class="page-header">
 			<h1>Results: <?php echo get_search_query(); ?></h1>
 		</header>
-
+				<div class="row">
+					<div class="col-order">
+						<?php renderTemplate('pages/blog/archive'); ?>
+						<?php renderTemplate('sidebars/blog'); ?>
+					</div>
+				</div>
 		<?php
-		while ( have_posts() ) : the_post();
-
-			get_template_part( 'template-parts/content', 'search' );
-
-		endwhile;
 	
 	else: ?>
 
@@ -32,7 +33,7 @@ get_header();
 	?>
 
 </main>
-
+</div>
+</div>
 <?php
-get_sidebar();
 get_footer();
