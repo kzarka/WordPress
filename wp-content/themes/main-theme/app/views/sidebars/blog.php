@@ -7,9 +7,9 @@
                     <!--Blog search start-->
                     <div class="filter-attribute-container filter-attribute-remove-container">
                         <div id="search" class="blog input-group">
-                            <form action="/search" method="POST" role="search" name="blog-search" id="blog-search">
-                                <input type="hidden" name="type" value="blog" />
-                                <input type="text" name="q" id="text-search" value="" placeholder="Search all articles..." class="form-control input-lg" aria-label="Search all articles..." />
+                            <form action="" id="search-form" method="get" id="blog-search">
+                                <input type="hidden" name="type" value="post" />
+                                <input type="text" name="s" id="text-search" value="<?php echo get_search_query(); ?>" placeholder="Search all articles..." class="form-control input-lg" aria-label="Search all articles..." />
                                 <span class="input-group-btn">
                                     <button type="submit" form="blog-search" class="btn btn-default btn-lg">&nbsp;</button>
                                 </span>
