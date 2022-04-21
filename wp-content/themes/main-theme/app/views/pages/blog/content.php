@@ -1,13 +1,31 @@
 <?php while ( have_posts() ) : the_post(); ?>
 <div id="" class="col-md-9 col-sm-12">
     <div class="article-container">
-        <div class="article-title">
-            <h1><?= the_title() ?></h1>
-        </div>
-        <div class="article-date"> by: elomus-theme Admin - <time datetime="<?= get_the_date() ?>"> <?= get_the_date('Y/m/d') ?> </time>
-        </div>
-        <div class="article-description">
-            <?= the_content() ?>
+    <div class="article-item-inner row text-left">
+        <div class="col-sm-3">
+                <a href="<?= esc_url( get_permalink() ); ?>">
+                    <?php
+                        $thumbnailId = get_post_meta(get_the_ID(), '_thumbnail_id', $single = true);
+                        if($thumbnailId) {
+                    ?>
+                    <img class=" ls-is-cached lazyloaded" data-="" src="<?= wp_get_attachment_image_url($thumbnailId, $size = 'full', $icon = false) ?>" alt="Ladipiscing erat llentesque pellentesque eton">
+                    <?php } else {?>
+                        <img class=" ls-is-cached lazyloaded" data-="" src="<?= get_template_directory_uri() . '/app/images/no-img.jpg'; ?>" alt="Ladipiscing erat llentesque pellentesque eton">
+                    <?php }?>
+                </a>
+            </div>
+            <div class="article-intro col-sm-9">
+                <div class="article-name">
+                    <a href="<?= esc_url( get_permalink() ); ?>"><?= the_title(); ?></a>
+                </div>
+                <p class="articledate">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    <time datetime="<?= get_the_date('Y/m/d H:i:s') ?>"><?= get_the_date('Y/m/d') ?></time> / by: elomus-theme Admin
+                </p>
+                <div class="intro-content" style="padding: 0 0 10px;">
+                    <p><?= the_content() ?></p>
+                </div>
+            </div>
         </div>
         <div class="clear"></div>
         <div class="comment-respond">
