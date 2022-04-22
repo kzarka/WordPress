@@ -722,186 +722,18 @@ function getDataSlider($id) {
 					$additional_classes .= " showcase_hide_mobile";
 				}
 			}
-			$output .= "<div id='".esc_attr($slide_data['css_id'])."' class='owl-carousel sa_owl_theme ".$additional_classes."' ";
-			$output .= "data-slider-id='".esc_attr($slide_data['css_id'])."' style='".$slider_style."'>\n";
-			if ($sa_pro_version) {
-				// PRO VERSION - INITIALISE VAIRABLES FOR MAGNIFIC POPUP
-				$lightbox_function = "open_lightbox_gallery_".$slide_data['css_id'];
-				$lightbox_gallery_id = "lightbox_button_".$slide_data['css_id'];
-				$lightbox_count = 0;
-			}
 			$urrl = [];
 			$content = [];
 			for ($i = 1; $i <= $slide_data['num_slides']; $i++) {
 				$urrl[] = wp_get_attachment_image_src($slide_data["slide".$i."_image_id"], 'full');
 				$slide_content = $slide_data["slide".$i."_content"];
 				$content[] = $slide_content;
-				if ($slide_data['bg_image_size'] != 'full') {
-					// use predefined wordpress image size (from 'other settings')
-					$slide_image_src = wp_get_attachment_image_src($slide_data["slide".$i."_image_id"], $slide_data['bg_image_size']);
-				} else {
-					// use "full" wordpress image size
-					$slide_image_src = wp_get_attachment_image_src($slide_data["slide".$i."_image_id"], 'full');
-				}
-				// SA PRO VERSION - USE POPUP IMAGE AS SLIDE BACKGROUND IMAGE (IF THIS OPTION SELECTED)
-				if (($sa_pro_version) && ($slide_data["slide".$i."_popup_type"] == 'IMAGE')) {
-					if (($slide_data["slide".$i."_popup_background"] != 'no') && ($slide_data["slide".$i."_popup_image"] != '')) {
-						$slide_image_src = wp_get_attachment_image_src($slide_data["slide".$i."_popup_imageid"], $slide_data["slide".$i."_popup_background"]);
-					}
-				} elseif (($sa_pro_version) && ($slide_data["slide".$i."_popup_type"] == 'VIDEO')) {
-					if ($slide_data["slide".$i."_popup_video_type"] == "youtube") {
-						if ($slide_data["slide".$i."_image_id"] == '99999999') {
-							$slide_image_src = array();
-							$popup_video_id = $slide_data["slide".$i."_popup_video_id"];
-							$slide_image_src[0] = "https://img.youtube.com/vi/".$popup_video_id."/hqdefault.jpg";
-						}
-					}
-				}
-				$slide_image_size = $slide_data["slide".$i."_image_size"];
-				$slide_image_pos = $slide_data["slide".$i."_image_pos"];
-				$slide_image_repeat = $slide_data["slide".$i."_image_repeat"];
-				$slide_image_color = $slide_data["slide".$i."_image_color"];
-				$slide_style =  "padding:".$slide_data['slide_padding_tb']."% ".$slide_data['slide_padding_lr']."%; ";
-				$slide_style .= "margin:0px ".$slide_data['slide_margin_lr']."%; ";
-				if (!empty($slide_image_src[0])) {
-					$slide_style .= "background-image:url(\"".$slide_image_src[0]."\"); ";
-					$slide_style .= "background-position:".$slide_image_pos."; ";
-					$slide_style .= "background-size:".$slide_image_size."; ";
-					$slide_style .= "background-repeat:".$slide_image_repeat."; ";
-				}
-				if (!empty($slide_image_color) && ($slide_image_color != "rgba(0,0,0,0)")) {
-					$slide_style .= "background-color:".$slide_image_color."; ";
-				}
-				if (strpos($slide_data['slide_min_height_perc'], 'px') !== false) {
-					$slide_style .= "min-height:".$slide_data['slide_min_height_perc']."; ";
-				}
 
-				// BUILD SLIDE LINK HOVER BUTTON
-				$link_output = '';
-				if ($slide_data["slide".$i."_link_url"] != '') {
-					// $link_title = "slide ".$slide_data["slide".$i."_num"]." link";
-					$link_title = ""; // SET LINK TITLE TO BLANK - 03/01/2022
-					$link_output =  "<a class='sa_slide_link_icon' href='".$slide_data["slide".$i."_link_url"]."' ";
-					$link_output .= "target='".$slide_data["slide".$i."_link_target"]."' ";
-					$link_output .= "title='".$link_title."' aria-label='".$link_title."'></a>";
-				}
-
-				// BUILD POPUP HOVER BUTTON - PRO VERSION ONLY!
-				$popup_output = '';
-				if ($sa_pro_version) {
-					if (($slide_data["slide".$i."_popup_type"] == 'IMAGE') && ($slide_data["slide".$i."_popup_image"] != '')) {
-						$lightbox_count++;
-						$popup_output =  "<div class='sa_popup_zoom_icon' onClick='".$lightbox_function."(".$lightbox_count.");'></div>";
-					}
-					if (($slide_data["slide".$i."_popup_type"] == 'VIDEO') && ($slide_data["slide".$i."_popup_video_id"] != '')) {
-						$lightbox_count++;
-						$popup_output =  "<div class='sa_popup_video_icon' onClick='".$lightbox_function."(".$lightbox_count.");'></div>";
-					}
-					if ($slide_data["slide".$i."_popup_type"] == 'HTML') {
-						$lightbox_count++;
-						$popup_output =  "<div class='sa_popup_zoom_icon' onClick='".$lightbox_function."(".$lightbox_count.");'></div>";
-					}
-				}
-
-				// DISPLAY SLIDE OUTPUT
-				//$data_hash = $slide_data['css_id']."_slide".sprintf('%02d', $i);
-				//$output .= "<div class='sa_hover_container' data-hash='".$data_hash."' style='".esc_attr($slide_style)."'>";
-				$css_id = $slide_data['css_id']."_slide".sprintf('%02d', $slide_data["slide".$i."_num"]);
-				if ($slide_data['disable_slide_ids'] == '1') {
-					if ($slide_data['vert_center'] == 'true') {
-						$output .= "<div class='".$css_id." sa_hover_container sa_vert_center_wrap' style='".esc_attr($slide_style)."'>";
-					} else {
-						$output .= "<div class='".$css_id." sa_hover_container' style='".esc_attr($slide_style)."'>";
-					}
-				} else {
-					if ($slide_data['vert_center'] == 'true') {
-						$output .= "<div id='".$css_id."' class='sa_hover_container sa_vert_center_wrap' style='".esc_attr($slide_style)."'>";
-					} else {
-						$output .= "<div id='".$css_id."' class='sa_hover_container' style='".esc_attr($slide_style)."'>";
-					}
-				}
-				if (($link_output != '') || ($popup_output != '')) {
-					if ($slide_data['slide_icons_location'] == 'Top Left') {
-						// icons location - top left
-						$style = "top:0px; left:0px; margin:0px;";
-					} elseif ($slide_data['slide_icons_location'] == 'Top Center') {
-						// icons location - top center
-						if (($link_output != '') && ($popup_output != ''))	{ $hov_marginL = '-40px'; }
-						else																{ $hov_marginL = '-20px'; }
-						$style = "top:0px; left:50%; margin-left:".$hov_marginL.";";
-					} elseif ($slide_data['slide_icons_location'] == 'Top Right') {
-						// icons location - top right
-						$style = "top:0px; right:0px; margin:0px;";
-					} elseif ($slide_data['slide_icons_location'] == 'Bottom Left') {
-						// icons location - bottom left
-						$style = "bottom:0px; left:0px; margin:0px;";
-					} elseif ($slide_data['slide_icons_location'] == 'Bottom Center') {
-						// icons location - bottom center
-						if (($link_output != '') && ($popup_output != ''))	{ $hov_marginL = '-40px'; }
-						else																{ $hov_marginL = '-20px'; }
-						$style = "bottom:0px; left:50%; margin-left:".$hov_marginL.";";
-					} elseif ($slide_data['slide_icons_location'] == 'Bottom Right') {
-						// icons location - bottom right
-						$style = "bottom:0px; right:0px; margin:0px;";
-					} else {
-						// icons location - center center (default)
-						if (($link_output != '') && ($popup_output != '')) { $hov_marginL = '-40px'; }
-						else																{ $hov_marginL = '-20px'; }
-						$style = "top:50%; left:50%; margin-top:-20px; margin-left:".$hov_marginL.";";
-					}
-					// check whether to display a 'full slide link' for this slide
-					$full_slide_link = 0;
-					if ((($link_output == '') && ($popup_output != '')) ||
-						 (($link_output != '') && ($popup_output == ''))) {
-						if ($slide_data['slide_icons_fullslide'] == '1') {
-							$full_slide_link = 1;
-						}							
-					}
-					if ($full_slide_link == 1) {
-						// display full slide link
-						$output .= "<div class='sa_hover_fullslide'>";
-					} else {
-						// display link buttons
-						if ($slide_data['slide_icons_visible'] == 'true') {
-							$output .= "<div class='sa_hover_buttons always_visible' style='".$style."'>";
-						} else {
-							$output .= "<div class='sa_hover_buttons' style='".$style."'>";
-						}
-					}
-					if ($link_output != '') {
-						$output .= $link_output;
-					}
-					if ($popup_output != '') {
-						$output .= $popup_output;
-					}
-					$output .= "</div>\n"; // .sa_hover_buttons
-				}
-				if ($slide_data['strip_javascript'] == '1') {
-					// strip JavaScript code (<script> tags) from slide content
-					$slide_content = remove_javascript_from_content($slide_content);
-				}
-				// ##### REMOVE LAZY LOAD IMAGES FEATURE (WHICH IS NOW INCLUDED IN WP 5.5) #####
-				/*
-				if ($slide_data['lazy_load_images'] == '1') {
-					// modify images (<img> tag) within slide content to enable owl carousel lazy load
-					$slide_content = set_slide_images_to_lazy_load($slide_content);
-				}
-				*/
-				if ($slide_data['vert_center'] == 'true') {
-					// vertically center content within each slide
-					// (we do this by wrapping slide content in a '<div>' wrapper
-					$slide_content = "<div class='sa_vert_center'>".$slide_content."</div>";
-				}
-				$output .= $slide_content."</div>\n"; // .sa_hover_container
 			}
 		
 		}
 	}
 	$data['imgs'] = $urrl;
 	$data['contents'] = $content;
-	// echo "<pre>";
-	// var_dump($data);
-	// echo "</pre>";
-	// die();
 	return $data;
 }
