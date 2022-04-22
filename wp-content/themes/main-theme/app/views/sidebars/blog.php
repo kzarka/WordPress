@@ -64,9 +64,6 @@
                                     <time datetime="2021-08-25 17:31:39 -0400"><?= get_the_date() ?></time>
                                     <strong>Tác Giả:</strong> <?= get_the_author() ?>
                                 </p>
-                                <div class="intro-content" style="padding: 0 0 10px;">
-                                    <p><?=substr(get_the_content(), 0, 100) ?></p>
-                                </div>
                             </div>
                         <?php endwhile; ?>
                         <?php endif; wp_reset_postdata();?>
