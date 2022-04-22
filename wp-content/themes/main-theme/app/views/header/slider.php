@@ -8,65 +8,35 @@
                         <div class="sub-col col-sm-12 col-md-12">
                             <!--Slider Area Start-->
                             <div class="banner7">
-                                <?php echo do_shortcode('[slide-anything id="87"]');?>
                                 <?php
-                                    echo "<pre>";
-                                    var_dump(getDataSlider(87));
-                                    die();
+                                    $data = getDataSlider(64);
                                 ?>
                                 <div class="oc-banner7-container" id="Slideshow-1480267833382">
                                     <div class="flexslider oc-nivoslider our_story">
                                         <div class="oc-loading"></div>
                                         <div id="oc-inivoslider1" class="nivoSlider slides static_video">
-                                            <img
-                                                style="display: none;"
-                                                class="lazyload"
-                                                data-src="//cdn.shopify.com/s/files/1/3012/8606/files/slider3-aero1-1920x846_1920x846.progressive.jpg?v=1519055913"
-                                                alt=""
-                                                title="#banner1480267833382-caption1"
-                                            />
-                                            <img
-                                                style="display: none;"
-                                                class="lazyload"
-                                                data-src="//cdn.shopify.com/s/files/1/3012/8606/files/slider1-aero1-1920x846_1920x846.progressive.jpg?v=1519055942"
-                                                alt=""
-                                                title="#banner1480267833382-caption2"
-                                            />
-                                            <img
-                                                style="display: none;"
-                                                class="lazyload"
-                                                data-src="//cdn.shopify.com/s/files/1/3012/8606/files/slider2-aero1-1920x846_1920x846.progressive.jpg?v=1519055928"
-                                                alt=""
-                                                title="#banner1480267833382-caption3"
-                                            />
+                                            <?php foreach( $data['imgs'] as $key => $img) {?>
+                                                <img
+                                                    style="display: none;"
+                                                    class="lazyload"
+                                                    data-src="<?= $img[0] ?>"
+                                                    alt=""
+                                                    title="#banner1480267833382-caption<?= $key ?>"
+                                                />
+                                            <?php } ?>
                                         </div>
 
-                                        <div id="banner1480267833382-caption1" class="banner7-caption nivo-html-caption nivo-caption move-slides-effect" data-class="slide-movetype">
+                                        <?php foreach($data['contents'] as $key => $content) { ?>
+                                        <div id="banner1480267833382-caption<?= $key ?>" class="banner7-caption nivo-html-caption nivo-caption move-slides-effect" data-class="slide-movetype">
                                             <div class="timeloading">ghfghfgphpfg</div>
-                                            <div class="banner7-content slider-2">
+                                            <div class="banner7-content slider-<?= $key ?>">
                                                 <div class="text-content" style="top: 50%; right: 0%; left: 0%; width: 100%; text-align: center;">
-                                                    <div class="banner7-des" style="float: none;">jhjfghjfghj</div>
+                                                    <div class="banner7-des" style="float: none;"><?= $content ?></div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <?php } ?>
 
-                                        <div id="banner1480267833382-caption2" class="banner7-caption nivo-html-caption nivo-caption move-slides-effect" data-class="slide-movetype">
-                                            <div class="timeloading">fjghghghghghghghghghghghghghghghghgh</div>
-                                            <div class="banner7-content slider-3">
-                                                <div class="text-content" style="top: 50%; right: 0%; left: 0%; width: 100%; text-align: center;">
-                                                    <div class="banner7-des" style="float: none;">jfggggggggggggggg</div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div id="banner1480267833382-caption3" class="banner7-caption nivo-html-caption nivo-caption move-slides-effect" data-class="slide-movetype">
-                                            <div class="timeloading">fghhhhhhhhhhhhhhhhhhhhhhhhh</div>
-                                            <div class="banner7-content slider-1">
-                                                <div class="text-content" style="top: 50%; right: 0%; left: 0%; width: 100%; text-align: center;">
-                                                    <div class="banner7-des" style="float: none;">gfjgfjgfjgfjgfjgfjgfjgfjgfjgfjgfjgfjgfjrtrtt</div>
-                                                </div>
-                                            </div>
-                                        </div>
 
                                         <script type="text/javascript">
                                             $(document).ready(function () {
