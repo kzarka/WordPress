@@ -18,47 +18,55 @@
                     </div>
                     <!-- Shows a link menu selected from settings -->
                     <div class="filter-attribute-container filter-categories">
-                        <label>Home</label>
+                        <label>Chuyên Muc</label>
                         <div class="list-group-item">
                             <div id="filter-group0">
-                                <a class="a-filter add-filter" href="/?preview_theme_id=">Home 1</a>
-                                <a class="a-filter add-filter" href="/?_ab=0&amp;_fd=0&amp;_sc=1&amp;preview_theme_id=120396480548">Home 2</a>
-                                <a class="a-filter add-filter" href="/?_ab=0&amp;_fd=0&amp;_sc=1&amp;preview_theme_id=120396447780">Home 3</a>
-                                <a class="a-filter add-filter" href="/?_ab=0&amp;_fd=0&amp;_sc=1&amp;preview_theme_id=120396382244">Home 4</a>
-                                <a class="a-filter add-filter" href="/?_ab=0&amp;_fd=0&amp;_sc=1&amp;preview_theme_id=120397496356">Home 5</a>
-                                <a class="a-filter add-filter" href="/?_ab=0&amp;_fd=0&amp;_sc=1&amp;preview_theme_id=120396316708">Home Fashion</a>
-                                <a class="a-filter add-filter" href="/?_ab=0&amp;_fd=0&amp;_sc=1&amp;preview_theme_id=120409980964">Home Fashion Light</a>
-                                <a class="a-filter add-filter" href="/?_ab=0&amp;_fd=0&amp;_sc=1&amp;preview_theme_id=120415846436">Home Jewellery Dark</a>
-                                <a class="a-filter add-filter" href="/?_ab=0&amp;_fd=0&amp;_sc=1&amp;preview_theme_id=120415911972">Home Jewellery Light</a>
+                                <?php $cats = get_the_category(); // category object
+                                    $top_cat_obj = array();
+                                    $i=0;
+                                    foreach($cats as $cat) {
+                                        if ($cat->parent == 0 && $i < 10) {
+                                            $top_cat_obj[] = $cat;
+                                            $i++;
+                                        }
+                                    }
+                                ?>
+                                <?php foreach($top_cat_obj as $top_cat) { 
+                                    ?>
+                                    <a class="a-filter add-filter" href="<?= get_category_link($top_cat->term_id) ?>"><?= $top_cat->name ?></a>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
                     <!--Sidebar recent articles -->
                     <div id="blog-sidebar" class="filter-attribute-container">
-                        <label>Recent Articles</label>
+                        <label>Bài viết mới </label>
                         <div class="article-page">
+                        <?php
+                            $args = array(
+                                'post_status' => 'publish',
+                                'posts_per_page' => 2,
+                                'post_type'   => 'post',
+                                'orderby' => 'date',
+                                'order' => 'DESC',
+                            );
+                            $the_query = new WP_Query( $args );
+
+                        ?>
+                        <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
                             <div class="intro-content">
                                 <div class="article-name">
                                     <h4>
-                                        <a href="/blogs/news/ladipiscing-erat-llentesque-pellentesque-eton">Ladipiscing erat llentesque pellentesque eton</a>
+                                        <a href="<?= esc_url( get_permalink() ); ?>"><?= the_title() ?></a>
                                     </h4>
                                 </div>
                                 <p class="articledate">
-                                    <time datetime="2021-08-25 17:31:39 -0400">Aug 25, 2021</time>
-                                    <strong>by</strong> elomus-theme Admin
+                                    <time datetime="2021-08-25 17:31:39 -0400"><?= get_the_date() ?></time>
+                                    <strong>Tác Giả:</strong> <?= get_the_author() ?>
                                 </p>
                             </div>
-                            <div class="intro-content">
-                                <div class="article-name">
-                                    <h4>
-                                        <a href="/blogs/news/claritas-est-etiam-processus-dynamicus-1">Claritas est etiam processus dynamicus.</a>
-                                    </h4>
-                                </div>
-                                <p class="articledate">
-                                    <time datetime="2018-02-24 18:50:00 -0500">Feb 24, 2018</time>
-                                    <strong>by</strong> aero-theme Admin
-                                </p>
-                            </div>
+                        <?php endwhile; ?>
+                        <?php endif; wp_reset_postdata();?>
                         </div>
                     </div>
                     <!--Sidebar tags section -->
