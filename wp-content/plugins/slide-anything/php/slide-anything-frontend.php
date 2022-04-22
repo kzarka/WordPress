@@ -146,6 +146,7 @@ function slide_anything_shortcode($atts) {
 					}
 				}
 			}
+
 			$slide_data['slide_duration'] = floatval($metadata['sa_slide_duration'][0]) * 1000;
 			$slide_data['slide_transition'] = floatval($metadata['sa_slide_transition'][0]) * 1000;
 			if (isset($metadata['sa_slide_by'][0]) && ($metadata['sa_slide_by'][0] != '')) {
@@ -631,6 +632,7 @@ function slide_anything_shortcode($atts) {
 			}
 			$urrl = [];
 			for ($i = 1; $i <= $slide_data['num_slides']; $i++) {
+				// var_dump( wp_get_attachment_image_src($slide_data["slide".$i."_image_id"], 'full'));
 				$slide_content = $slide_data["slide".$i."_content"];
 				if ($slide_data['bg_image_size'] != 'full') {
 					// use predefined wordpress image size (from 'other settings')
@@ -1273,7 +1275,6 @@ function slide_anything_shortcode($atts) {
 	// echo "<pre>";
 	// var_dump($slide_data);
 	// echo "</pre>";
-	// die();	
 	
 	return $output;
 }
