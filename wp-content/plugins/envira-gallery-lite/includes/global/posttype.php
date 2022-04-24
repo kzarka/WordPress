@@ -59,7 +59,7 @@ class Envira_Gallery_Posttype {
             'not_found'          => __( 'No galleries found.', 'envira-gallery-lite' ),
             'not_found_in_trash' => __( 'No galleries found in trash.', 'envira-gallery-lite' ),
             'parent_item_colon'  => '',
-            'menu_name'          => __( 'Envira Gallery', 'envira-gallery-lite' ),
+            'menu_name'          => __( 'Bộ Sưu Tập', 'envira-gallery-lite' ),
         );
         $labels = apply_filters( 'envira_gallery_post_type_labels', $labels );
 

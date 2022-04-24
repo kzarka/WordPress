@@ -6,11 +6,7 @@
 
 ?>
 
-</div>
-
-<footer class="site-footer">untheme by Tania Rascia.</footer>
-
-<?php wp_footer(); ?>
+<?php renderTemplate('footer/footer'); ?>
 
 </body>
 </html>

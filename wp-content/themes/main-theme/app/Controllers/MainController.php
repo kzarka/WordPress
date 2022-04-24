@@ -6,6 +6,7 @@ use App\Controllers\NavController;
 use App\Controllers\PaginationController;
 use App\Controllers\ProductController;
 use App\Controllers\SliderController;
+use App\Controllers\ContactController;
 
 /**
  * MainController
@@ -18,6 +19,7 @@ class MainController extends BaseController
 		new PaginationController();
 		new ProductController();
 		new SliderController();
+		new ContactController();
 	}
 }
 
