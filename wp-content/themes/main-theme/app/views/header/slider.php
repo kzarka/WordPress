@@ -1,3 +1,5 @@
+<?php $data = getViewArgs($args, 'data'); ?>
+<?php $original = getViewArgs($args, 'original'); ?>
 <!-- BEGIN content_for_index -->
 <div class="shopify-section index-section slider" id="topslider">
     <div data-section="my-slider" class="my-slider main-row full-width">
@@ -13,63 +15,28 @@
                                         <div class="oc-loading"></div>
                                         <div id="oc-inivoslider1" class="nivoSlider slides static_video">
                                             <?php
-                                                $args = array(
-                                                    'post_type'   => 'envira',
-                                                    'orderby'     => 'ID',
-                                                    'order'       => 'ASC',
-                                                );
-                                                $the_query = new WP_Query( $args );
-                                                $post_slider = $the_query->posts[0];
-                                                $argsParent = array(
-                                                    'post_parent' => $post_slider->ID,
-                                                    'post_type'   => 'attachment',
-                                                    'post_status' => 'inherit',
-                                                    'orderby'     => 'ID',
-                                                    'order'       => 'ASC',
-                                                );
-                                                $the_query_parent = new WP_Query( $argsParent );
-                                                $postParents = $the_query_parent->posts;
-                                            ?>
-                                            
-                                            <?php
-                                                foreach($postParents as $post) {
+                                                foreach($data as $item) {
                                             ?>
                                             <img
                                                 style="display: none;"
                                                 class="lazyload"
-                                                data-src="<?= wp_get_attachment_image_url($post->ID, $size = 'full', $icon = false) ?>"
+                                                data-src="<?= $item['src'] ?>"
                                                 alt=""
-                                                title="#banner1480267833382-caption1"
+                                                title=""
                                             />
                                             <?php } ?>
                                         </div>
 
-                                        <div id="banner1480267833382-caption1" class="banner7-caption nivo-html-caption nivo-caption move-slides-effect" data-class="slide-movetype">
+                                        <?php foreach($data as $key => $item): ?>
+                                        <div class="banner7-caption nivo-html-caption nivo-caption move-slides-effect" data-class="slide-movetype">
                                             <div class="timeloading"></div>
-                                            <div class="banner7-content slider-2">
+                                            <div class="banner7-content slider-<?= $key ?>">
                                                 <div class="text-content" style="top: 50%; right: 0%; left: 0%; width: 100%; text-align: center;">
                                                     <div class="banner7-des" style="float: none;"></div>
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <div id="banner1480267833382-caption2" class="banner7-caption nivo-html-caption nivo-caption move-slides-effect" data-class="slide-movetype">
-                                            <div class="timeloading"></div>
-                                            <div class="banner7-content slider-3">
-                                                <div class="text-content" style="top: 50%; right: 0%; left: 0%; width: 100%; text-align: center;">
-                                                    <div class="banner7-des" style="float: none;"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div id="banner1480267833382-caption3" class="banner7-caption nivo-html-caption nivo-caption move-slides-effect" data-class="slide-movetype">
-                                            <div class="timeloading"></div>
-                                            <div class="banner7-content slider-1">
-                                                <div class="text-content" style="top: 50%; right: 0%; left: 0%; width: 100%; text-align: center;">
-                                                    <div class="banner7-des" style="float: none;"></div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <?php endforeach; ?>
 
                                         <script type="text/javascript">
                                             $(document).ready(function () {
@@ -79,7 +46,7 @@
                                                     boxCols: 8,
                                                     boxRows: 4,
                                                     manualAdvance: false,
-                                                    animSpeed: 500,
+                                                    animSpeed: <?= get_soliloquy_config('speed', $original) ?>,
                                                     pauseTime: 10000,
                                                     startSlide: 0,
                                                     controlNav: true,

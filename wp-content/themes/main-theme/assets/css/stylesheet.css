@@ -4932,3 +4932,24 @@ background: url(//cdn.shopify.com/s/files/1/3012/8606/t/19/assets/icon-btn-cart-
   display: block;
   margin: 0px auto;
 }
+
+.product-info-main .button-cart{
+  color: #ffffff;
+  background-color: #e51515;
+}
+.product-info-main .button-cart:hover {
+  background: #ffffff;
+  color: #e51515;
+  border-color: #e51515;
+}
+
+
+.shopify-payment-button__button--unbranded{
+  color: #e51515 !important;
+  background-color: #ffffff !important;
+}
+.shopify-payment-button__button--unbranded:hover {
+  background: #e51515 !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}

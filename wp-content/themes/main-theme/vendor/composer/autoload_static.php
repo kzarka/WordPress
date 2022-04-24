@@ -24,11 +24,28 @@ class ComposerStaticInit0385cc8398e279dccb31d1ca601ef6f6
         ),
     );
 
+    public static $classMap = array (
+        'App\\Controllers\\BaseController' => __DIR__ . '/../..' . '/app/Controllers/BaseController.php',
+        'App\\Controllers\\MainController' => __DIR__ . '/../..' . '/app/Controllers/MainController.php',
+        'App\\Controllers\\NavController' => __DIR__ . '/../..' . '/app/Controllers/NavController.php',
+        'App\\Controllers\\PaginationController' => __DIR__ . '/../..' . '/app/Controllers/PaginationController.php',
+        'App\\Controllers\\ProductController' => __DIR__ . '/../..' . '/app/Controllers/ProductController.php',
+        'App\\Controllers\\SliderController' => __DIR__ . '/../..' . '/app/Controllers/SliderController.php',
+        'App\\Loader' => __DIR__ . '/../..' . '/app/Loader.php',
+        'App\\Services\\NavMenuService' => __DIR__ . '/../..' . '/app/Services/NavMenuService.php',
+        'App\\Shortcodes\\GalleryShortcode' => __DIR__ . '/../..' . '/app/Shortcodes/GalleryShortcode.php',
+        'App\\Shortcodes\\HeaderShortcode' => __DIR__ . '/../..' . '/app/Shortcodes/HeaderShortcode.php',
+        'App\\Shortcodes\\RegisterShortcodes' => __DIR__ . '/../..' . '/app/Shortcodes/RegisterShortcodes.php',
+        'App\\Shortcodes\\TestShortcode' => __DIR__ . '/../..' . '/app/Shortcodes/TestShortcode.php',
+        'App\\Widgets\\ABC' => __DIR__ . '/../..' . '/app/widgets/widget.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit0385cc8398e279dccb31d1ca601ef6f6::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit0385cc8398e279dccb31d1ca601ef6f6::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit0385cc8398e279dccb31d1ca601ef6f6::$classMap;
 
         }, null, ClassLoader::class);
     }

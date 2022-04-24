@@ -24,7 +24,9 @@
 	
 <a class="screen-reader-text" href="#content">Skip to content</a>
 <div id="shopify-section-header" class="shopify-section"><!--Start of Header Area-->
+    <?php if (!is_front_page()): ?>  
     <?php renderTemplate('header/header'); ?>
+    <?php endif; ?>
 
     <style>
       @media(min-width:768px){

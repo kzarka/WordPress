@@ -3,12 +3,18 @@
  * The template for displaying all pages
  *
  */
-
 get_header();
-?>
 
+if (is_front_page()): ?>
 <main id="main" class="site-main" role="main">
+<?php while ( have_posts() ) : the_post(); ?>
+<?php the_content(); ?>
+<?php endwhile; ?>
+</main>
 
+<?php
+else:
+?>
 	<?php
 	while ( have_posts() ) : the_post();
 
@@ -25,5 +31,5 @@ get_header();
 </main>
 
 <?php
-get_sidebar();
+endif;
 get_footer();
