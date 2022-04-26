@@ -6,7 +6,7 @@
 get_header();
 
 if (is_front_page()): ?>
-<main id="main" class="site-main" role="main">
+<main id="main" class="site-main common-home" role="main">
 <?php while ( have_posts() ) : the_post(); ?>
 <?php the_content(); ?>
 <?php endwhile; ?>
@@ -15,21 +15,15 @@ if (is_front_page()): ?>
 <?php
 else:
 ?>
+<div class="container">
 	<?php
 	while ( have_posts() ) : the_post();
-
-		get_template_part( 'template-parts/content', 'page' );
-
-		// If comments are open or we have at least one comment, load up the comment template.
-		if ( comments_open() || get_comments_number() ) :
-			comments_template();
-		endif;
+		the_content();
 
 	endwhile; 
 	?>
-
-</main>
-
+</div>
 <?php
 endif;
+
 get_footer();

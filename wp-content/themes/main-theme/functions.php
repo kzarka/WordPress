@@ -77,6 +77,7 @@ function untheme_scripts() {
 	wp_enqueue_script( 'jquery-scripts-1', get_template_directory_uri() . '/assets/js/custommenu.js' );
 	wp_enqueue_script( 'jquery-scripts-3', get_template_directory_uri() . '/assets/js/mobile_menu.js' );
 	wp_enqueue_script( 'jquery-scripts-4', get_template_directory_uri() . '/assets/js/common.js' );
+	wp_enqueue_script( 'jquery-scripts-54', get_template_directory_uri() . '/assets/js/owl.carousel.min.js' );
 }
 add_action( 'wp_enqueue_scripts', 'untheme_scripts' );
 
