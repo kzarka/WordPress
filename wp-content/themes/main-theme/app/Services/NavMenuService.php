@@ -23,7 +23,7 @@ class NavMenuService
 		register_nav_menus(
 	    	array(
 	      		config('app.navbar.pc') => __( 'Header Navigator PC' ),
-	            config('app.navbar.tablet') => __( 'Header Navigator Tablet' ),
+	            config('app.navbar.footer') => __( 'Footer Navigator' ),
 	      		config('app.navbar.sp') => __( 'Header Navigator Mobile' ),
 	     	)
 	   	);
@@ -32,6 +32,22 @@ class NavMenuService
 	public function loadHeaderPCNav()
 	{
 		$items = $this->buildObject(config('app.navbar.pc'));
+    	if(empty($items)) return false;
+
+	    return $items;
+	}
+
+	public function loadHeaderSPNav()
+	{
+		$items = $this->buildObject(config('app.navbar.sp'));
+    	if(empty($items)) return false;
+
+	    return $items;
+	}
+
+	public function loadHeaderFooterNav()
+	{
+		$items = $this->buildObject(config('app.navbar.footer'));
     	if(empty($items)) return false;
 
 	    return $items;

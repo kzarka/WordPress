@@ -1,4 +1,4 @@
-<?php $items = getViewArgs($args, 'items'); ?>
+ <?php $items = getViewArgs($args, 'items'); ?>
 <div class="nav-container visible-lg visible-md">
     <div role="menu" id="pt_custommenu" class="pt_custommenu horizontal-menu">
 
@@ -15,9 +15,9 @@
             </div>
             <?php if (!empty($item['children'])): ?>
             <?php if (!empty($item['total_level']) && $item['total_level'] == 3): ?>
-            <?php renderTemplate('header/navbar/partials/level-three', ['items' => $item['children']]) ?>
+            <?php renderTemplate('header/navbar/partials/pc-nav/level-three', ['items' => $item['children']]) ?>
             <?php else: ?>
-            <?php renderTemplate('header/navbar/partials/level-two', ['items' => $item['children']]) ?>
+            <?php renderTemplate('header/navbar/partials/pc-nav/level-two', ['items' => $item['children']]) ?>
             <?php endif; ?>
             <?php endif; ?>
         </div>

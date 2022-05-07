@@ -26,6 +26,8 @@ class ComposerStaticInit0385cc8398e279dccb31d1ca601ef6f6
 
     public static $classMap = array (
         'App\\Controllers\\BaseController' => __DIR__ . '/../..' . '/app/Controllers/BaseController.php',
+        'App\\Controllers\\ContactController' => __DIR__ . '/../..' . '/app/Controllers/ContactController.php',
+        'App\\Controllers\\CustomerFeedbackController' => __DIR__ . '/../..' . '/app/Controllers/CustomerFeedbackController.php',
         'App\\Controllers\\MainController' => __DIR__ . '/../..' . '/app/Controllers/MainController.php',
         'App\\Controllers\\NavController' => __DIR__ . '/../..' . '/app/Controllers/NavController.php',
         'App\\Controllers\\PaginationController' => __DIR__ . '/../..' . '/app/Controllers/PaginationController.php',
@@ -33,11 +35,13 @@ class ComposerStaticInit0385cc8398e279dccb31d1ca601ef6f6
         'App\\Controllers\\SliderController' => __DIR__ . '/../..' . '/app/Controllers/SliderController.php',
         'App\\Loader' => __DIR__ . '/../..' . '/app/Loader.php',
         'App\\Services\\NavMenuService' => __DIR__ . '/../..' . '/app/Services/NavMenuService.php',
+        'App\\Services\\ProductService' => __DIR__ . '/../..' . '/app/Services/ProductService.php',
         'App\\Shortcodes\\GalleryShortcode' => __DIR__ . '/../..' . '/app/Shortcodes/GalleryShortcode.php',
         'App\\Shortcodes\\HeaderShortcode' => __DIR__ . '/../..' . '/app/Shortcodes/HeaderShortcode.php',
+        'App\\Shortcodes\\ProductShortcodes' => __DIR__ . '/../..' . '/app/Shortcodes/ProductShortcodes.php',
         'App\\Shortcodes\\RegisterShortcodes' => __DIR__ . '/../..' . '/app/Shortcodes/RegisterShortcodes.php',
+        'App\\Shortcodes\\SliderShortcode' => __DIR__ . '/../..' . '/app/Shortcodes/SliderShortcode.php',
         'App\\Shortcodes\\TestShortcode' => __DIR__ . '/../..' . '/app/Shortcodes/TestShortcode.php',
-        'App\\Widgets\\ABC' => __DIR__ . '/../..' . '/app/widgets/widget.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

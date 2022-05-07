@@ -1,3 +1,4 @@
+<?php $items = getViewArgs($args, 'items'); ?>
 <footer class="" style="background-image: url('//cdn.shopify.com/s/files/1/3012/8606/files/bkg_footer_c0f71867-38e3-492b-995f-7d0269b97db1.jpg?v=1625767911') !important">
     <div class="footer-top">
         <div class="container">
@@ -21,102 +22,27 @@
                         </ul>
                     </div>
                 </div>
+                <?php if (!empty($items)): ?>
+                <?php foreach ($items as $key => $item): ?>
                 <div class="col col-md-2 col-sm-6 col-footer">
                     <div class="footer-title">
-                        <h3>Main menu</h3>
+                        <h3><?= $item['title'] ?></h3>
                     </div>
+                    <?php if (!empty($item['children'])): ?>
+                    <?php $children = $item['children']; ?>
                     <div class="footer-content">
                         <ul class="list-unstyled text-content">
+                            <?php foreach ($children as $key2 => $item2): ?>
                             <li>
-                                <a href="/">Home</a>
+                                <a href="<?= $item2['url'] ?>"><?= $item2['title'] ?></a>
                             </li>
-                            <li>
-                                <a href="/collections/all?sort_by=created-ascending">Shop</a>
-                            </li>
-                            <li>
-                                <a href="/collections/wheels">Featured</a>
-                            </li>
-                            <li>
-                                <a href="/search">Layouts</a>
-                            </li>
-                            <li>
-                                <a href="/pages/contact-us">Pages</a>
-                            </li>
+                            <?php endforeach; ?>
                         </ul>
                     </div>
+                    <?php endif; ?>
                 </div>
-                <div class="col col-md-2 col-sm-6 col-footer">
-                    <div class="footer-title">
-                        <h3>Main menu</h3>
-                    </div>
-                    <div class="footer-content">
-                        <ul class="list-unstyled text-content">
-                            <li>
-                                <a href="/">Home</a>
-                            </li>
-                            <li>
-                                <a href="/collections/all?sort_by=created-ascending">Shop</a>
-                            </li>
-                            <li>
-                                <a href="/collections/wheels">Featured</a>
-                            </li>
-                            <li>
-                                <a href="/search">Layouts</a>
-                            </li>
-                            <li>
-                                <a href="/pages/contact-us">Pages</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col col-md-2 col-sm-6 col-footer">
-                    <div class="footer-title">
-                        <h3>Main menu</h3>
-                    </div>
-                    <div class="footer-content">
-                        <ul class="list-unstyled text-content">
-                            <li>
-                                <a href="/">Home</a>
-                            </li>
-                            <li>
-                                <a href="/collections/all?sort_by=created-ascending">Shop</a>
-                            </li>
-                            <li>
-                                <a href="/collections/wheels">Featured</a>
-                            </li>
-                            <li>
-                                <a href="/search">Layouts</a>
-                            </li>
-                            <li>
-                                <a href="/pages/contact-us">Pages</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col col-md-2 col-sm-6 col-footer">
-                    <div class="footer-title">
-                        <h3>Main menu</h3>
-                    </div>
-                    <div class="footer-content">
-                        <ul class="list-unstyled text-content">
-                            <li>
-                                <a href="/">Home</a>
-                            </li>
-                            <li>
-                                <a href="/collections/all?sort_by=created-ascending">Shop</a>
-                            </li>
-                            <li>
-                                <a href="/collections/wheels">Featured</a>
-                            </li>
-                            <li>
-                                <a href="/search">Layouts</a>
-                            </li>
-                            <li>
-                                <a href="/pages/contact-us">Pages</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <?php endforeach; ?>
+                <?php endif; ?>
             </div>
         </div>
     </div>
@@ -131,7 +57,7 @@
                         <a class="fab fa-facebook-f facebook" data-toggle="tooltip" data-placement="bottom" href="https://facebook.com/shopify" title="" data-original-title="aero-theme on Facebook"></a>
                     </li>
                     <li>
-                        <a class="fab fa-twitter twitter" data-toggle="tooltip" data-placement="bottom" href="https://twitter.com/shopify" title="" data-original-title="aero-theme on Twitter"></a>
+                        <a class="fab fa-twitter twitter" data-toggle="tooltip" data-placement="bottom" href="https://twitter.coms/thopify" title="" data-original-title="aero-theme on Twitter"></a>
                     </li>
                     <li>
                         <a class="fab fa-pinterest-p pinterest" data-toggle="tooltip" data-placement="bottom" href="https://pinterest.com/shopify" title="" data-original-title="aero-theme on Pinterest"></a>

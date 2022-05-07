@@ -6,7 +6,7 @@
 
 ?>
 
-<?php renderTemplate('footer/footer'); ?>
+<?php do_action ( 'my_footer' ); ?>
 <?php wp_footer(); ?>
 </body>
 </html>

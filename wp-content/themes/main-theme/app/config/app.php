@@ -4,7 +4,7 @@ return [
 	'view_path' => '/app/views/',
 	'navbar' => [
 		'pc' => 'header-menu-pc',
-		'tablet' => 'header-menu-tablet',
+		'footer' => 'footer-menu',
 		'sp' => 'header-menu-pc',
 	]
 ];
