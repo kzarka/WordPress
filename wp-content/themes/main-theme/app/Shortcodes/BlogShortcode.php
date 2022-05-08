@@ -16,6 +16,7 @@ class BlogShortcode
     {
     	$args = extract(shortcode_atts(array(
             'container' => true,
+            'orderby' => 'new',
             'title' => 'Blog Posts',
             'desc' => ''
         ), $atts));
