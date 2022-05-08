@@ -7,6 +7,7 @@ use App\Shortcodes\GalleryShortcode;
 use App\Shortcodes\HeaderShortcode;
 use App\Shortcodes\SliderShortcode;
 use App\Shortcodes\ProductShortcodes;
+use App\Shortcodes\BlogShortcode;
 
 /**
  * MainController
@@ -25,6 +26,7 @@ class RegisterShortcodes
 		new HeaderShortcode();
 		new SliderShortcode();
 		new ProductShortcodes();
+		new BlogShortcode();
 	}
 }
 

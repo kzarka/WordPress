@@ -1,5 +1,5 @@
-<div id="shopify-section-1507203403431" class="shopify-section index-section index-section--flush">
-    <div class="main-row  " data-section-id="1507203403431">
+<div class="shopify-section index-section index-section--flush">
+    <div class="main-row  ">
         <div class="container">
             <div class="row">
                 <div class="main-col col-sm-12 col-md-12">
@@ -20,7 +20,7 @@
                                             <div class="articles-inner item-inner">
                                                 <div class="articles-image">
                                                     <a class="" href="/blogs/news/ladipiscing-erat-llentesque-pellentesque-eton">
-                                                        <img class="lazyload" data-src="//cdn.shopify.com/s/files/1/3012/8606/articles/post1-270x334_b462aee1-714d-4ba8-866a-acba7f09ca18.jpg?v=1629927100" alt="Ladipiscing erat llentesque pellentesque eton">
+                                                        <img src="https://cdn.shopify.com/s/files/1/3012/8606/articles/post1-270x334_b462aee1-714d-4ba8-866a-acba7f09ca18.jpg?v=1629927100">
                                                     </a>
                                                 </div>
                                                 <div class="aritcles-content text-center">
@@ -42,7 +42,7 @@
                                             <div class="articles-inner item-inner">
                                                 <div class="articles-image">
                                                     <a class="" href="/blogs/news/claritas-est-etiam-processus-dynamicus-1">
-                                                        <img class="lazyload" data-src="//cdn.shopify.com/s/files/1/3012/8606/articles/post1-270x334.jpg?v=1519516270" alt="Claritas est etiam processus dynamicus.">
+                                                        <img src="https://cdn.shopify.com/s/files/1/3012/8606/articles/post1-270x334_b462aee1-714d-4ba8-866a-acba7f09ca18.jpg?v=1629927100">
                                                     </a>
                                                 </div>
                                                 <div class="aritcles-content text-center">
@@ -64,7 +64,7 @@
                                             <div class="articles-inner item-inner">
                                                 <div class="articles-image">
                                                     <a class="" href="/blogs/news/claritas-est-etiam-processus-dynamicus">
-                                                        <img class="lazyload" data-src="//cdn.shopify.com/s/files/1/3012/8606/articles/post2-270x334.jpg?v=1519516260" alt="Claritas est etiam processus dynamicus.">
+                                                        <img src="https://cdn.shopify.com/s/files/1/3012/8606/articles/post1-270x334_b462aee1-714d-4ba8-866a-acba7f09ca18.jpg?v=1629927100">
                                                     </a>
                                                 </div>
                                                 <div class="aritcles-content text-center">
