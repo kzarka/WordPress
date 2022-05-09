@@ -4953,3 +4953,8 @@ background: url(//cdn.shopify.com/s/files/1/3012/8606/t/19/assets/icon-btn-cart-
   color: #ffffff !important;
   border-color: #ffffff !important;
 }
+
+.px-0 {
+    padding-right: 0!important;
+    padding-left: 0!important;
+}

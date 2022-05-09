@@ -20,7 +20,7 @@
 
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class('common-home'); ?> >
 	
 <a class="screen-reader-text" href="#content">Skip to content</a>
 <div id="shopify-section-header" class="shopify-section"><!--Start of Header Area-->
