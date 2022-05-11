@@ -20,3 +20,71 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 </ul>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".slider .tt-product").addClass('owl-carousel').addClass('owl-theme')
+		$(".slider .tt-product").find('.col-sm-6').removeClass (function (index, className) {
+		    return (className.match (/(^|\s)col-\S+/g) || []).join(' ');
+		});
+
+		$('.tt-product').not('.slider').find('.col-sm-6').css('margin-right', '20px');
+
+        $(".slider .tt-product").owlCarousel({
+            loop: false,
+            margin: 30,
+            nav: false,
+            dots: false,
+            autoplay: false,
+            autoplayTimeout: 1000,
+            autoplayHoverPause: true,
+            autoplaySpeed: 1000,
+            navSpeed: 1000,
+            dotsSpeed: 1000,
+            lazyLoad: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false,
+                    dots: false
+                },
+                480: {
+                    items: 2,
+                    nav: false,
+                    dots: false
+                },
+                768: {
+                    items: 2,
+                },
+                992: {
+                    items: 2
+                },
+                1200: {
+                    items: 3
+                },
+                1600: {
+                    items: 3
+                }
+            },
+            onInitialized: function() {
+                var count = $("#product_module1504983008053 .tt-product .owl-item.active").length;
+                if (count == 1) {
+                    $("#product_module1504983008053 .tt-product .owl-item").removeClass('first');
+                    $("#product_module1504983008053 .tt-product .active").addClass('first');
+                } else {
+                    $("#product_module1504983008053 .tt-product .owl-item").removeClass('first');
+                    $("#product_module1504983008053 .tt-product .owl-item.active:first").addClass('first');
+                }
+            },
+            onTranslated: function() {
+                var count = $("#product_module1504983008053 .tt-product .owl-item.active").length;
+                if (count == 1) {
+                    $("#product_module1504983008053 .tt-product .owl-item").removeClass('first');
+                    $("#product_module1504983008053 .tt-product .active").addClass('first');
+                } else {
+                    $("#product_module1504983008053 .tt-product .owl-item").removeClass('first');
+                    $("#product_module1504983008053 .tt-product .owl-item.active:first").addClass('first');
+                }
+            }
+        });
+    });
+</script>

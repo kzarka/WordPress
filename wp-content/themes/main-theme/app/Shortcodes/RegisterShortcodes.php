@@ -8,6 +8,7 @@ use App\Shortcodes\HeaderShortcode;
 use App\Shortcodes\SliderShortcode;
 use App\Shortcodes\ProductShortcodes;
 use App\Shortcodes\BlogShortcode;
+use App\Shortcodes\HeadingShortcode;
 
 /**
  * MainController
@@ -27,6 +28,7 @@ class RegisterShortcodes
 		new SliderShortcode();
 		new ProductShortcodes();
 		new BlogShortcode();
+		new HeadingShortcode();
 	}
 }
 

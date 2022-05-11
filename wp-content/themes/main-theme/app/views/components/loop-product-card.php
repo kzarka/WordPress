@@ -1,7 +1,7 @@
 <?php 
 global $product;
 ?>
-<div class="row_items col-sm-6 px-0 col-md-<?php echo ceil(12/esc_attr( wc_get_loop_prop( 'columns' ) )); ?>">
+<div class="row_items">
     <div class="product-layout grid-style">
         <div class="product-thumb transition">
             <div class="item">
@@ -12,7 +12,6 @@ global $product;
                             <span>-<?= ceil(($product->get_regular_price() - $product->get_sale_price())/$product->get_regular_price()*100) ?>%</span>
                         </div>
                         <?php endif; ?>
-                        
                         <a href="/products/aopo-designs-woolrich-klettersack" class="product-image">
                             <?= woocommerce_get_product_thumbnail(); ?>
                         </a>
@@ -39,7 +38,7 @@ global $product;
                         <div class="product-des">Born to be worn. Clip on the worlds most wearable music player and take up to 240 songs with you anywhere. Choose from five colors including four new hues to...</div>
                         <?php if ($product->get_sale_price()): ?>
                         <p class="rate-special">
-                            -<?= ceil(($product->get_regular_price() - $product->get_sale_price())/$product->get_regular_price()*100) ?>% 
+                            -<?= ceil(($product->get_price() - $product->get_sale_price())/$product->get_price()*100) ?>% 
                         </p>
                         <?php endif; ?>
                         <div class="price-box">
@@ -50,7 +49,7 @@ global $product;
                             </p>
                             <?php if ($product->get_sale_price()): ?>
                             <p class="old-price">
-                                <span class="price"><?= wc_price( $product->get_regular_price() ); ?></span>
+                                <span class="price"><?= wc_price( $product->get_sale_price() ); ?></span>
                             </p>
                             <?php endif; ?>
                         </div>

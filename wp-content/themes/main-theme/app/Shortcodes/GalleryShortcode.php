@@ -19,7 +19,6 @@ class GalleryShortcode
         ), $atts));
 
         $slide = envira_get_gallery_attrs($atts);
-		var_dump($slide);
     }
 }
 
