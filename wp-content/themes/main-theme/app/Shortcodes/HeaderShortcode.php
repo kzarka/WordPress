@@ -14,7 +14,7 @@ class HeaderShortcode
 
     public function main($atts)
     {
-        renderTemplate('header/header');
+        return renderTemplateHTML('header/header');
     }
 }
 

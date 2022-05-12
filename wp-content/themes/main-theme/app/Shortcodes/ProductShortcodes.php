@@ -12,19 +12,7 @@ class ProductShortcodes
     function __construct()
     {
         $this->productService = new ProductService;
-        add_shortcode('product_featured', array( $this, 'featuredProduct' ));
         add_shortcode('shop_categories', array( $this, 'categoryProduct' ));
-    }
-
-    public function featuredProduct($atts)
-    {
-        extract( shortcode_atts( array(
-            'container' => false,
-            'title' => 'Featured Product',
-            'desc' => ''
-        ), $atts));
-
-        renderTemplate('shortcodes/featured-product', ['container' => $container, 'title' => $title, 'desc' => $desc]);
     }
 
     public function categoryProduct($atts)
@@ -40,7 +28,7 @@ class ProductShortcodes
 
         if (empty($data)) return;
 
-        renderTemplate('shortcodes/category-product', ['container' => $container, 'title' => $title, 'desc' => $desc, 'data' => $data]);
+        return renderTemplateHTML('shortcodes/category-product', ['container' => $container, 'title' => $title, 'desc' => $desc, 'data' => $data]);
     }
 }
 

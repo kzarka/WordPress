@@ -43,7 +43,6 @@ $code = md5(uniqid(rand(), true));
                                             <?php $query->the_post(); ?>
                                             <?php renderTemplate('components/loop-product-card', []); ?>
                                             <?php endwhile; ?>
-                                            <?php wp_reset_postdata(); ?>
                                             <?php endif; ?>
                                             <div class="row_items"></div>
                                             <!-- productTabContent -->

@@ -1,7 +1,7 @@
 <?php 
 global $product;
 ?>
-<div class="row_items col-sm-6 px-0 col-md-<?php echo ceil(12/esc_attr( wc_get_loop_prop( 'columns' ) )); ?>">
+<div class="row_items">
     <div class="product-layout grid-style">
         <div class="product-thumb transition">
             <div class="item">
@@ -36,7 +36,9 @@ global $product;
                         <h4 class="product-name">
                             <a href="<?= $product->get_permalink(); ?>"> <?= $product->post->post_title; ?> </a>
                         </h4>
-                        <div class="product-des">Born to be worn. Clip on the worlds most wearable music player and take up to 240 songs with you anywhere. Choose from five colors including four new hues to...</div>
+                        <?php if ($product->get_short_description()): ?>
+                        <div class="product-des"><?= $product->get_short_description(); ?></div>
+                        <?php endif; ?>
                         <?php if ($product->get_sale_price()): ?>
                         <p class="rate-special">
                             -<?= ceil(($product->get_regular_price() - $product->get_sale_price())/$product->get_regular_price()*100) ?>% 

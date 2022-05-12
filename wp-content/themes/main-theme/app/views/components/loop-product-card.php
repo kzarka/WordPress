@@ -35,7 +35,9 @@ global $product;
                         <h4 class="product-name">
                             <a href="<?= $product->get_permalink(); ?>"> <?= $product->post->post_title; ?> </a>
                         </h4>
-                        <div class="product-des">Born to be worn. Clip on the worlds most wearable music player and take up to 240 songs with you anywhere. Choose from five colors including four new hues to...</div>
+                        <?php if ($product->get_short_description()): ?>
+                        <div class="product-des"><?= $product->get_short_description(); ?></div>
+                        <?php endif; ?>
                         <?php if ($product->get_sale_price()): ?>
                         <p class="rate-special">
                             -<?= ceil(($product->get_price() - $product->get_sale_price())/$product->get_price()*100) ?>% 

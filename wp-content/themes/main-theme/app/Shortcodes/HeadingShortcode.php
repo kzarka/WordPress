@@ -19,7 +19,7 @@ class HeadingShortcode
             'desc' => '',
         ), $atts));
 
-        renderTemplate('shortcodes/heading', ['title' => $title, 'desc' => $desc]);
+        return renderTemplateHTML('shortcodes/heading', ['title' => $title, 'desc' => $desc]);
     }
 }
 

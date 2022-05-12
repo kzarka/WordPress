@@ -27,7 +27,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 		    return (className.match (/(^|\s)col-\S+/g) || []).join(' ');
 		});
 
-		$('.tt-product').not('.slider').find('.col-sm-6').css('margin-right', '20px');
 
         $(".slider .tt-product").owlCarousel({
             loop: false,

@@ -89,6 +89,25 @@ if (!function_exists('renderTemplate')) {
     }
 }
 
+if (!function_exists('renderTemplateHTML')) {
+    function renderTemplateHTML($path, $args = [])
+    {
+        if (!is_array($args) && !empty($args)) {
+            $args = [$args];
+        }
+
+        $fullPath = get_template_directory() . config('app.view_path') . $path . '.php';
+        $template_path = config('app.view_path') . $path;
+        if (!file_exists($fullPath)) {
+            echo "Template not found " . $path;
+            new \WP_Error( 'broke', __( "I've fallen and can't get up", "my_textdomain" ) );
+            die;
+        }
+
+        return load_template_part($template_path, null, $args);
+    }
+}
+
 if (!function_exists('post_pagination')) {
     function post_pagination() {
         if( is_singular() )
@@ -168,5 +187,15 @@ if (!function_exists('post_pagination')) {
 
         $html .= '</ul></div>' . "\n";
         echo $html;
+    }
+}
+
+if (!function_exists('load_template_part')) {
+    function load_template_part($template_name, $part_name=null, $args = []) {
+        ob_start();
+        get_template_part($template_name, $part_name, $args);
+        $var = ob_get_contents();
+        ob_end_clean();
+        return $var;
     }
 }

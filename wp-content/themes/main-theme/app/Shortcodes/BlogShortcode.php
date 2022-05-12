@@ -17,11 +17,9 @@ class BlogShortcode
     	$args = extract(shortcode_atts(array(
             'container' => true,
             'orderby' => 'new',
-            'title' => 'Blog Posts',
-            'desc' => ''
         ), $atts));
 
-        renderTemplate('shortcodes/blog', [
+        return renderTemplateHTML('shortcodes/blog', [
             'data' => $data, 
             'container' => $container,
             'desc' => $desc,

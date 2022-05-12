@@ -24,7 +24,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<li <?php wc_product_class( '', $product ); ?>>
+<li <?php wc_product_class( 'col-sm-6 col-md-' . ceil(12/esc_attr( wc_get_loop_prop( 'columns' ) )), $product ); ?>>
 	<?php
 
 	do_action( 'woocommerce_custom_product_loop_item' );

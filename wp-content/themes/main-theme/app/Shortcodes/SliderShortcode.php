@@ -21,7 +21,7 @@ class SliderShortcode
     		$data = $data['slider'];
     	}
 
-        renderTemplate('header/slider', ['data' => $data, 'original' => $original]);
+        return renderTemplateHTML('header/slider', ['data' => $data, 'original' => $original]);
     }
 }
 
