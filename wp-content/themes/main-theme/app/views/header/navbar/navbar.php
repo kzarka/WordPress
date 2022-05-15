@@ -4,7 +4,7 @@
             <div class="logo-container">
                 <div id="logo">
                     <a href="/" itemprop="url">
-                        <img src="//cdn.shopify.com/s/files/1/3012/8606/files/logo-aero1.png?v=1519058255" alt="aero-theme" itemprop="logo" class="img-responsive logo" />
+                        <?= get_custom_logo_html(); ?>
                     </a>
                 </div>
             </div>
@@ -31,7 +31,7 @@
                         <div class="dropdown-toggle search-button" data-toggle="dropdown"></div>
 
                         <div class="dropdown-menu search-content">
-                            <input type="text" name="q" id="text-search" value="" placeholder="Search entire store here..." class="form-control input-lg" aria-label="Search entire store here..." autocomplete="off" />
+                            <input type="text" name="q" id="text-search" value="" placeholder="Tìm kiếm sản phẩm" class="form-control input-lg" aria-label="Tìm kiếm sản phẩm" autocomplete="off" />
 
                             <span class="input-group-btn">
                                 <button type="button" class="btn btn-default btn-lg"></button>
@@ -48,84 +48,21 @@
                         </div>
                         <div class="dropdown-menu setting-content">
                             <div class="account">
-                                <button class="btn btn-link btn-link-current">My Account <i class="fa fa-angle-down"></i></button>
+                                <button class="btn btn-link btn-link-current">Tài khoản <i class="fa fa-angle-down"></i></button>
                                 <div class="content" id="top-links">
                                     <ul class="ul-account list-unstyled">
                                         <li>
-                                            <a href="/account/login" id="customer_login_link"><span>Sign in</span></a>
+                                            <a href="<?= site_url('/wp-login.php?action=login'); ?>" id="customer_login_link"><span>Đăng nhập</span></a>
                                         </li>
 
                                         <li>
-                                            <a href="/account/register" id="customer_register_link"><span>Register</span></a>
-                                        </li>
-
-                                        <li>
-                                            <a href="/pages/wishlist"><span>Wish List</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="/cart"><span>Cart</span></a>
+                                            <a href="<?= site_url('/wp-login.php?action=register'); ?>" id="customer_register_link"><span>Đăng ký</span></a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-
-                            <div class="currency" id="form-currency">
-                                <span class="pull-left hidden-xs hidden-sm hidden-md text-ex">Currency:</span>
-                                <button class="btn btn-link btn-link-current selected-currency">USD</button>
-                                <ul name="currencies" class="content">
-                                    <li>
-                                        <button class="currency-select btn btn-link btn-block item-selected" type="button" name="USD" value="USD">USD</button>
-                                    </li>
-
-                                    <li>
-                                        <button class="currency-select btn btn-link btn-block" type="button" name="EUR" value="USD">EUR</button>
-                                    </li>
-
-                                    <li>
-                                        <button class="currency-select btn btn-link btn-block" type="button" name="GBP" value="USD">GBP</button>
-                                    </li>
-
-                                    <li>
-                                        <button class="currency-select btn btn-link btn-block" type="button" name="PKR" value="USD">PKR</button>
-                                    </li>
-
-                                    <li>
-                                        <button class="currency-select btn btn-link btn-block" type="button" name="CAD" value="USD">CAD</button>
-                                    </li>
-
-                                    <li>
-                                        <button class="currency-select btn btn-link btn-block" type="button" name="JPY" value="USD">JPY</button>
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div id="cart" class="btn-group btn-block">
-                    <button type="button" data-toggle="dropdown" data-loading-text="Loading..." class="btn dropdown-toggle"><i class="ion-bag"></i> <span id="cart-total">0</span></button>
-                    <ul class="dropdown-menu pull-right">
-                        <li class="has-scroll">
-                            <p class="text-center cart-empty">Your shopping cart is empty!</p>
-                            <table class="table">
-                                <tbody></tbody>
-                            </table>
-                        </li>
-                        <li class="hide">
-                            <table class="table">
-                                <tbody>
-                                    <tr>
-                                        <td class="text-left"><strong>Subtotal :</strong></td>
-                                        <td class="text-right" id="cart-subtotal"><span class="money" data-currency-usd="$0.00">$0.00</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <p class="text-center cart-button">
-                                <a href="/cart">View Cart</a>
-                                <a href="/checkout">Checkout</a>
-                            </p>
-                        </li>
-                    </ul>
                 </div>
 
                 <script type="text/javascript">

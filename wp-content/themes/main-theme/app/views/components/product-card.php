@@ -13,7 +13,7 @@ global $product;
                         </div>
                         <?php endif; ?>
                         
-                        <a href="/products/aopo-designs-woolrich-klettersack" class="product-image">
+                        <a href="<?= $product->get_permalink(); ?>" class="product-image">
                             <?= woocommerce_get_product_thumbnail(); ?>
                         </a>
                         <div class="action-links" style="display: none;">
@@ -21,7 +21,7 @@ global $product;
                                 <i class="ion-android-favorite-outline"></i>
                                 <span>Add to Wish List</span>
                             </button>
-                            <button class="button btn-compare" type="button" data-toggle="tooltip" title="View Details" onclick="window.top.location.href='/products/aopo-designs-woolrich-klettersack';">
+                            <button class="button btn-compare" type="button" data-toggle="tooltip" title="View Details" onclick="window.top.location.href='<?= $product->get_permalink(); ?>';">
                                 <span>View Details</span>
                             </button>
                         </div>

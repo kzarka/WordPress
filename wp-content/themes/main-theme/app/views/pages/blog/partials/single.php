@@ -19,7 +19,7 @@
                 </div>
                 <p class="articledate">
                     <i class="fa fa-clock-o" aria-hidden="true"></i>
-                    <time datetime="<?= get_the_date('Y/m/d H:i:s') ?>"><?= get_the_date('Y/m/d') ?></time> / by: elomus-theme Admin
+                    <time datetime="<?= get_the_date('Y/m/d H:i:s') ?>"><?= get_the_date('Y/m/d') ?></time> / by: <?php the_author_meta( 'user_nicename' , $author_id ); ?> 
                 </p>
                 <div class="intro-content" style="padding: 0 0 10px;">
                     <p><?=substr(get_the_content(), 0, 300) ?></p>

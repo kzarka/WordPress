@@ -6,18 +6,18 @@
                 <div class="col1 col-md-4 col-sm-12 col-footer">
                     <div class="footer-content">
                         <a href="/" itemprop="url" class="logo-footer">
-                            <img class=" lazyloaded" data-src="//cdn.shopify.com/s/files/1/3012/8606/files/logo-aero1_c79eb9d5-3b65-4c27-ac70-8b4c0c3ec086.png?v=1520968132" alt="aero-theme" itemprop="logo" src="//cdn.shopify.com/s/files/1/3012/8606/files/logo-aero1_c79eb9d5-3b65-4c27-ac70-8b4c0c3ec086.png?v=1520968132">
+                            <?= get_custom_logo_html(); ?>
                         </a>
-                        <p class="des">We are a team of designers and developers who creates high quality premium Shopify themes.</p>
+                        <p class="des"><?= get_option('my_desc'); ?></p>
                         <ul class="footer-contact">
                             <li class="address">
-                                <span>Address :</span>No 40 Baria Sreet 133/2, NewYork, USA.
+                                <span>Address :</span><?= get_option('my_address'); ?>
                             </li>
                             <li class="phone">
-                                <span>Phone :</span>(012) 800 456 789
+                                <span>Phone :</span><?= get_option('my_phone'); ?>
                             </li>
                             <li class="email">
-                                <span>Email :</span>support@masstechnologist
+                                <span>Email :</span><?= get_option('my_email'); ?>
                             </li>
                         </ul>
                     </div>
@@ -50,7 +50,7 @@
         <div class="container">
             <div class="container-inner">
                 <div class="footer-copyright">
-                    <span>Copyright © 2021 <a href="http://masstechnologist.com/">MassTechnologist.com.</a> All rights reserved. </span>
+                    <span>Copyright © <?= date('Y'); ?> <a href="<?= get_site_url(); ?>"><?= get_bloginfo( 'name' ); ?></a> All rights reserved. </span>
                 </div>
                 <ul class="link-follow">
                     <li class="first">
@@ -69,7 +69,7 @@
                         <a class="fab fa-instagram instagram" data-toggle="tooltip" data-placement="bottom" href="https://instagram.com/shopify" title="" data-original-title="aero-theme on Instagram"></a>
                     </li>
                 </ul>
-                <div class="footer-payment">
+                <div class="footer-payment" style="display: none;">
                     <a href="#">
                         <img src="//cdn.shopify.com/s/files/1/3012/8606/files/payment.png?v=1519662556" alt="payment">
                     </a>

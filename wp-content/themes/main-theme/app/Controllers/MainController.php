@@ -22,6 +22,13 @@ class MainController extends BaseController
 		new SliderController();
 		new ContactController();
 		new CustomerFeedbackController();
+		add_action( 'after_setup_theme' , array( $this, 'config_custom_logo' ) );
 	}
+
+	function config_custom_logo() {
+        
+	    add_theme_support( 'custom-logo' );
+	}
+
 }
 

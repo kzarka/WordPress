@@ -60,6 +60,7 @@ class NavMenuService
 	        $menu_items = wp_get_nav_menu_items($menu->term_id);
 
 	        $results = [];
+	        if (empty($menu_items)) return [];
 	        foreach( $menu_items as $menu_item ) {
 	            if ( !$menu_item->menu_item_parent ) {
 	                $parent_id = $menu_item->ID;

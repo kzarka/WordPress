@@ -199,3 +199,54 @@ if (!function_exists('load_template_part')) {
         return $var;
     }
 }
+
+if (!function_exists('get_custom_logo_html')) {
+    function get_custom_logo_html () {
+        $custom_logo_id = get_theme_mod( 'custom_logo' );
+        $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+         
+        if ( has_custom_logo() ) {
+            return '<img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '" class="img-responsive logo">';
+        }
+        return '<h1>' . get_bloginfo('name') . '</h1>';
+    }
+}
+
+if (!function_exists('get_product_brand_name')) {
+    function get_product_brand_name ($productId) {
+        $terms = get_the_terms( $productId, 'product_brand' );
+
+        if (empty($terms)) return '';
+        foreach ( $terms as $term ){
+            if ( $term->parent == 0 ) {
+                $brand_name=  $term->name;
+            }
+        }  
+        return $brand_name;
+    }
+}
+
+if (!function_exists('get_product_brand_slug')) {
+    function get_product_brand_slug ($productId) {
+        $terms = get_the_terms( $productId, 'product_brand' );
+
+        foreach ( $terms as $term ){
+            if ( $term->parent == 0 ) {
+                $brand_name=  $term->slug;
+            }
+        }  
+        return $brand_name;
+    }
+}
+
+if (!function_exists('get_product_tags')) {
+    function get_product_tags ($productId) {
+        $terms = get_the_terms( $productId, 'product_tag' );
+
+        $aromacheck = array();
+        if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
+            return $terms;
+        }
+        return [];
+    }
+}

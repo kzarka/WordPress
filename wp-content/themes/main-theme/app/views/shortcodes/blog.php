@@ -1,5 +1,5 @@
 <?php $container = getViewArgs($args, 'container'); ?>
-<?php $data = getViewArgs($args, 'data'); ?>
+<?php $query = getViewArgs($args, 'data'); ?>
 
 <div class="container">
     <div class="row">
@@ -8,74 +8,39 @@
                 <div class="sub-col col-sm-12 col-md-12">
                     <div id="blog_home" class="menu-recent">
                         <div class="">
-                            
                             <div class="articles-container owl-carousel owl-theme">
+                                <?php if( $query->have_posts() ): ?>
+                                <?php while ( $query->have_posts() ): ?>
+                                <?php $query->the_post(); ?>
                                 <div class="row_items">
                                     <div class="articles-inner item-inner">
                                         <div class="articles-image">
-                                            <a class="" href="/blogs/news/ladipiscing-erat-llentesque-pellentesque-eton">
-                                                <img src="https://cdn.shopify.com/s/files/1/3012/8606/articles/post1-270x334_b462aee1-714d-4ba8-866a-acba7f09ca18.jpg?v=1629927100">
+                                            <a class="" href="<?= the_permalink(); ?>">
+                                                <?php if ( has_post_thumbnail() ) {
+                                                the_post_thumbnail();
+                                                } else { ?>
+                                                <img src="/wp-content/uploads/woocommerce-placeholder-300x300.png">
+                                                <?php } ?>
+                                                
                                             </a>
                                         </div>
                                         <div class="aritcles-content text-center">
                                             <div class="articles-date">
-                                                <time datetime="Wednesday, August 25, 2021 at 5:31 pm -0400">
-                                                    <span>25</span>/Aug </time>
+                                                <time datetime="<?= get_the_date('Y/m/d H:i:s') ?>">
+                                                    <span> <?= get_the_date('Y/m') ?> </time>
                                             </div>
-                                            <a class="articles-name" href="/blogs/news/ladipiscing-erat-llentesque-pellentesque-eton">Ladipiscing erat llentesque pellentesque eton</a>
-                                            <p class="author"> by: <span>elomus-theme Admin</span>
+                                            <a class="articles-name" href="<?= the_permalink(); ?>" title="<?= the_title(); ?>"><?= the_title(); ?></a>
+                                            <p class="author"> by: <span> <?php the_author_meta( 'user_nicename' , $author_id ); ?> </span>
                                             </p>
                                             <div class="articles-intro">
-                                                <p> Lorem ipsum dolor sit amet. Integer adipiscing erat llentesque s sollicitudin pellentesque et non erat.... </p>
+                                                <p><?= the_excerpt(); ?></p>
                                             </div>
-                                            <a class="read-more" href="/blogs/news/ladipiscing-erat-llentesque-pellentesque-eton">Read more</a>
+                                            <a class="read-more" href="<?= the_permalink(); ?>">Đọc tiếp</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row_items">
-                                    <div class="articles-inner item-inner">
-                                        <div class="articles-image">
-                                            <a class="" href="/blogs/news/claritas-est-etiam-processus-dynamicus-1">
-                                                <img src="https://cdn.shopify.com/s/files/1/3012/8606/articles/post1-270x334_b462aee1-714d-4ba8-866a-acba7f09ca18.jpg?v=1629927100">
-                                            </a>
-                                        </div>
-                                        <div class="aritcles-content text-center">
-                                            <div class="articles-date">
-                                                <time datetime="Saturday, February 24, 2018 at 6:50 pm -0500">
-                                                    <span>24</span>/Feb </time>
-                                            </div>
-                                            <a class="articles-name" href="/blogs/news/claritas-est-etiam-processus-dynamicus-1">Claritas est etiam processus dynamicus.</a>
-                                            <p class="author"> by: <span>aero-theme Admin</span>
-                                            </p>
-                                            <div class="articles-intro">
-                                                <p> Lorem ipsum dolor sit amet. Integer adipiscing erat llentesque s sollicitudin pellentesque et non erat.... </p>
-                                            </div>
-                                            <a class="read-more" href="/blogs/news/claritas-est-etiam-processus-dynamicus-1">Read more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row_items">
-                                    <div class="articles-inner item-inner">
-                                        <div class="articles-image">
-                                            <a class="" href="/blogs/news/claritas-est-etiam-processus-dynamicus">
-                                                <img src="https://cdn.shopify.com/s/files/1/3012/8606/articles/post1-270x334_b462aee1-714d-4ba8-866a-acba7f09ca18.jpg?v=1629927100">
-                                            </a>
-                                        </div>
-                                        <div class="aritcles-content text-center">
-                                            <div class="articles-date">
-                                                <time datetime="Saturday, February 24, 2018 at 6:50 pm -0500">
-                                                    <span>24</span>/Feb </time>
-                                            </div>
-                                            <a class="articles-name" href="/blogs/news/claritas-est-etiam-processus-dynamicus">Claritas est etiam processus dynamicus.</a>
-                                            <p class="author"> by: <span>aero-theme Admin</span>
-                                            </p>
-                                            <div class="articles-intro">
-                                                <p> Lorem ipsum dolor sit amet. Integer adipiscing erat llentesque s sollicitudin pellentesque et non erat.... </p>
-                                            </div>
-                                            <a class="read-more" href="/blogs/news/claritas-est-etiam-processus-dynamicus">Read more</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php endwhile; ?>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
