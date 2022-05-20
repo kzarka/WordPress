@@ -1,0 +1,50 @@
+2022-05-14T06:08:23+00:00 CRITICAL Uncaught Error: Call to a member function have_posts() on null in F:\Project\wordpress\wp-content\themes\main-theme\app\views\shortcodes\blog.php:12
+Stack trace:
+#0 F:\Project\wordpress\wp-includes\template.php(772): require()
+#1 F:\Project\wordpress\wp-includes\template.php(716): load_template('F:\\Project\\word...', false, Array)
+#2 F:\Project\wordpress\wp-includes\general-template.php(204): locate_template(Array, true, false, Array)
+#3 F:\Project\wordpress\wp-content\themes\main-theme\app\helpers\app.php(196): get_template_part('/app/views/shor...', '', Array)
+#4 F:\Project\wordpress\wp-content\themes\main-theme\app\helpers\app.php(107): load_template_part('/app/views/shor...', NULL, Array)
+#5 F:\Project\wordpress\wp-content\themes\main-theme\app\Shortcodes\BlogShortcode.php(31): renderTemplateHTML('shortcodes/blog', Array)
+#6 F:\Project\wordpress\wp-includes\shortcodes.php(356): App\Shortcodes\BlogShortcode->main('', '', 'blog')
+#7 [internal function]: do_shortcode_tag(Array)
+#8 F:\Project\wordpress\wp-in in F:\Project\wordpress\wp-content\themes\main-theme\app\views\shortcodes\blog.php on line 12
+
+2022-05-14T06:08:27+00:00 CRITICAL Uncaught Error: Call to a member function have_posts() on null in F:\Project\wordpress\wp-content\themes\main-theme\app\views\shortcodes\blog.php:12
+Stack trace:
+#0 F:\Project\wordpress\wp-includes\template.php(772): require()
+#1 F:\Project\wordpress\wp-includes\template.php(716): load_template('F:\\Project\\word...', false, Array)
+#2 F:\Project\wordpress\wp-includes\general-template.php(204): locate_template(Array, true, false, Array)
+#3 F:\Project\wordpress\wp-content\themes\main-theme\app\helpers\app.php(196): get_template_part('/app/views/shor...', '', Array)
+#4 F:\Project\wordpress\wp-content\themes\main-theme\app\helpers\app.php(107): load_template_part('/app/views/shor...', NULL, Array)
+#5 F:\Project\wordpress\wp-content\themes\main-theme\app\Shortcodes\BlogShortcode.php(31): renderTemplateHTML('shortcodes/blog', Array)
+#6 F:\Project\wordpress\wp-includes\shortcodes.php(356): App\Shortcodes\BlogShortcode->main('', '', 'blog')
+#7 [internal function]: do_shortcode_tag(Array)
+#8 F:\Project\wordpress\wp-in in F:\Project\wordpress\wp-content\themes\main-theme\app\views\shortcodes\blog.php on line 12
+
+2022-05-14T06:09:02+00:00 CRITICAL Uncaught Error: Call to a member function have_posts() on null in F:\Project\wordpress\wp-content\themes\main-theme\app\views\shortcodes\blog.php:12
+Stack trace:
+#0 F:\Project\wordpress\wp-includes\template.php(772): require()
+#1 F:\Project\wordpress\wp-includes\template.php(716): load_template('F:\\Project\\word...', false, Array)
+#2 F:\Project\wordpress\wp-includes\general-template.php(204): locate_template(Array, true, false, Array)
+#3 F:\Project\wordpress\wp-content\themes\main-theme\app\helpers\app.php(196): get_template_part('/app/views/shor...', '', Array)
+#4 F:\Project\wordpress\wp-content\themes\main-theme\app\helpers\app.php(107): load_template_part('/app/views/shor...', NULL, Array)
+#5 F:\Project\wordpress\wp-content\themes\main-theme\app\Shortcodes\BlogShortcode.php(31): renderTemplateHTML('shortcodes/blog', Array)
+#6 F:\Project\wordpress\wp-includes\shortcodes.php(356): App\Shortcodes\BlogShortcode->main('', '', 'blog')
+#7 [internal function]: do_shortcode_tag(Array)
+#8 F:\Project\wordpress\wp-in in F:\Project\wordpress\wp-content\themes\main-theme\app\views\shortcodes\blog.php on line 12
+
+2022-05-14T06:09:09+00:00 CRITICAL Uncaught Error: Call to undefined function post_thumbnail() in F:\Project\wordpress\wp-content\themes\main-theme\app\views\shortcodes\blog.php:18
+Stack trace:
+#0 F:\Project\wordpress\wp-includes\template.php(772): require()
+#1 F:\Project\wordpress\wp-includes\template.php(716): load_template('F:\\Project\\word...', false, Array)
+#2 F:\Project\wordpress\wp-includes\general-template.php(204): locate_template(Array, true, false, Array)
+#3 F:\Project\wordpress\wp-content\themes\main-theme\app\helpers\app.php(196): get_template_part('/app/views/shor...', '', Array)
+#4 F:\Project\wordpress\wp-content\themes\main-theme\app\helpers\app.php(107): load_template_part('/app/views/shor...', NULL, Array)
+#5 F:\Project\wordpress\wp-content\themes\main-theme\app\Shortcodes\BlogShortcode.php(31): renderTemplateHTML('shortcodes/blog', Array)
+#6 F:\Project\wordpress\wp-includes\shortcodes.php(356): App\Shortcodes\BlogShortcode->main('', '', 'blog')
+#7 [internal function]: do_shortcode_tag(Array)
+#8 F:\Project\wordpress\wp-inclu in F:\Project\wordpress\wp-content\themes\main-theme\app\views\shortcodes\blog.php on line 18
+
+2022-05-14T06:17:43+00:00 CRITICAL syntax error, unexpected 'else' (T_ELSE) in F:\Project\wordpress\wp-content\themes\main-theme\header.php on line 27
+

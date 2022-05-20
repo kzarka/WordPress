@@ -1,0 +1,41 @@
+2022-04-26T14:07:37+00:00 CRITICAL syntax error, unexpected ';', expecting ')' in F:\Project\wordpress\wp-content\themes\main-theme\app\Services\ProductService.php on line 63
+
+2022-04-26T14:07:38+00:00 CRITICAL syntax error, unexpected ';', expecting ')' in F:\Project\wordpress\wp-content\themes\main-theme\app\Services\ProductService.php on line 63
+
+2022-04-26T14:14:04+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Term as array in F:\Project\wordpress\wp-content\themes\main-theme\app\Services\ProductService.php:37
+Stack trace:
+#0 F:\Project\wordpress\wp-content\themes\main-theme\app\Services\ProductService.php(46): App\Services\ProductService->getRandomTax()
+#1 F:\Project\wordpress\wp-content\themes\main-theme\app\Services\ProductService.php(64): App\Services\ProductService->filterTaxId(NULL)
+#2 F:\Project\wordpress\wp-content\themes\main-theme\app\Shortcodes\ProductShortcodes.php(32): App\Services\ProductService->buildTopCategoryData()
+#3 F:\Project\wordpress\wp-includes\shortcodes.php(356): App\Shortcodes\ProductShortcodes->categoryProduct(Array, '', 'shop_categories')
+#4 [internal function]: do_shortcode_tag(Array)
+#5 F:\Project\wordpress\wp-includes\shortcodes.php(228): preg_replace_callback('/\\[(\\[?)(header...', 'do_shortcode_ta...', '\n<figure class=...')
+#6 F:\Project\wordpress\wp-includes\class-wp-hook.php(307): do_shortcode('\n<figure class=...')
+#7 F:\Project\wor in F:\Project\wordpress\wp-content\themes\main-theme\app\Services\ProductService.php on line 37
+
+2022-04-26T14:15:48+00:00 CRITICAL Uncaught Error: Class 'App\Services\WP_Query' not found in F:\Project\wordpress\wp-content\themes\main-theme\app\Services\ProductService.php:77
+Stack trace:
+#0 F:\Project\wordpress\wp-content\themes\main-theme\app\Services\ProductService.php(68): App\Services\ProductService->getProductLoopByTax(18)
+#1 F:\Project\wordpress\wp-content\themes\main-theme\app\Shortcodes\ProductShortcodes.php(32): App\Services\ProductService->buildTopCategoryData()
+#2 F:\Project\wordpress\wp-includes\shortcodes.php(356): App\Shortcodes\ProductShortcodes->categoryProduct(Array, '', 'shop_categories')
+#3 [internal function]: do_shortcode_tag(Array)
+#4 F:\Project\wordpress\wp-includes\shortcodes.php(228): preg_replace_callback('/\\[(\\[?)(header...', 'do_shortcode_ta...', '\n<figure class=...')
+#5 F:\Project\wordpress\wp-includes\class-wp-hook.php(307): do_shortcode('\n<figure class=...')
+#6 F:\Project\wordpress\wp-includes\plugin.php(189): WP_Hook->apply_filters('\n<figure class=...', Array)
+#7 F:\Project\wordpress\wp-includes\post-t in F:\Project\wordpress\wp-content\themes\main-theme\app\Services\ProductService.php on line 77
+
+2022-04-26T14:16:09+00:00 CRITICAL Uncaught Error: Class 'App\Services\WP_Query' not found in F:\Project\wordpress\wp-content\themes\main-theme\app\Services\ProductService.php:77
+Stack trace:
+#0 F:\Project\wordpress\wp-content\themes\main-theme\app\Services\ProductService.php(68): App\Services\ProductService->getProductLoopByTax(18)
+#1 F:\Project\wordpress\wp-content\themes\main-theme\app\Shortcodes\ProductShortcodes.php(32): App\Services\ProductService->buildTopCategoryData()
+#2 F:\Project\wordpress\wp-includes\shortcodes.php(356): App\Shortcodes\ProductShortcodes->categoryProduct(Array, '', 'shop_categories')
+#3 [internal function]: do_shortcode_tag(Array)
+#4 F:\Project\wordpress\wp-includes\shortcodes.php(228): preg_replace_callback('/\\[(\\[?)(header...', 'do_shortcode_ta...', '\n<figure class=...')
+#5 F:\Project\wordpress\wp-includes\class-wp-hook.php(307): do_shortcode('\n<figure class=...')
+#6 F:\Project\wordpress\wp-includes\plugin.php(189): WP_Hook->apply_filters('\n<figure class=...', Array)
+#7 F:\Project\wordpress\wp-includes\post-t in F:\Project\wordpress\wp-content\themes\main-theme\app\Services\ProductService.php on line 77
+
+2022-04-26T14:26:54+00:00 CRITICAL syntax error, unexpected ';', expecting ')' in F:\Project\wordpress\wp-content\themes\main-theme\app\Shortcodes\ProductShortcodes.php on line 36
+
+2022-04-26T14:26:54+00:00 CRITICAL syntax error, unexpected ';', expecting ')' in F:\Project\wordpress\wp-content\themes\main-theme\app\Shortcodes\ProductShortcodes.php on line 36
+

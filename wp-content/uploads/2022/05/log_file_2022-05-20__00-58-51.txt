@@ -1,0 +1,158 @@
+
+---Downloaded files---
+The import files for: Home were successfully downloaded!
+Initial max execution time = 120
+Files info:
+Site URL = http://wordpress.info
+Data file = F:\Project\wordpress/wp-content/themes/autusin/lib/import/demo-1/data.xml
+Widget file = F:\Project\wordpress/wp-content/themes/autusin/lib/import/demo-1/widgets.json
+Customizer file = not defined!
+Options files:
+autusin_theme -> F:\Project\wordpress/wp-content/themes/autusin/lib/import/demo-1/theme_options.txt 
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+---Importing widgets---
+Sidebar Left Blog : 
+
+Chuyên mục - No Title - Imported
+Bài viết mới - No Title - Imported
+Mây Thẻ - No Title - Imported
+
+Sidebar Right Blog : 
+
+Chuyên mục - No Title - Imported
+Bài viết mới - No Title - Imported
+Mây Thẻ - No Title - Imported
+
+Sidebar Left Product : 
+
+WooCommerce product categories - Categories - Imported
+Lọc sản phẩm bởi Thuộc tính - Color - Imported
+Lọc sản phẩm bởi Thuộc tính - Size - Imported
+Lọc sản phẩm bởi giá - price - Imported
+Ảnh - No Title - Imported
+Mây Thẻ - Product tags - Imported
+
+Sidebar Right Product : 
+
+WooCommerce product categories - Categories - Imported
+Lọc sản phẩm bởi Thuộc tính - Color - Imported
+Lọc sản phẩm bởi Thuộc tính - Size - Imported
+Lọc sản phẩm bởi giá - price - Imported
+Ảnh - No Title - Imported
+Mây Thẻ - Product tags - Imported
+
+Sidebar Left Detail Product : 
+
+WooCommerce product categories - Categories - Imported
+Ảnh - No Title - Imported
+
+Sidebar Right Detail Product : 
+
+WooCommerce product categories - Categories - Imported
+Ảnh - No Title - Imported
+
+Sidebar Bottom Detail Product : 
+
+Sw Woocommerce Related &amp; Upsell Slider widget - No Title - Imported
+
+Filter Mobile : 
+
+Lọc sản phẩm bởi Thuộc tính - Color - Imported
+Lọc sản phẩm bởi Thuộc tính - Size - Imported
+Lọc sản phẩm bởi giá - Price - Imported
+
+
+
+---pt-ocdi/after_import---
+array(17) {
+  ["import_file_name"]=>
+  string(4) "Home"
+  ["page_title"]=>
+  string(11) "Home page 1"
+  ["header_title"]=>
+  string(14) "Header style 1"
+  ["footer_title"]=>
+  string(14) "Footer style 1"
+  ["site_url"]=>
+  string(44) "https://demo.wpthemego.com/themes/sw_autusin"
+  ["local_import_file"]=>
+  string(73) "F:\Project\wordpress/wp-content/themes/autusin/lib/import/demo-1/data.xml"
+  ["local_import_widget_file"]=>
+  string(77) "F:\Project\wordpress/wp-content/themes/autusin/lib/import/demo-1/widgets.json"
+  ["local_import_page_file"]=>
+  string(86) "F:\Project\wordpress/wp-content/themes/autusin/lib/import/demo-1/demo-content-page.xml"
+  ["local_import_pagemenu_file"]=>
+  string(90) "F:\Project\wordpress/wp-content/themes/autusin/lib/import/demo-1/demo-content-pagemenu.xml"
+  ["local_import_template_all_homepages"]=>
+  string(95) "F:\Project\wordpress/wp-content/themes/autusin/lib/import/demo-1/demo-content-all-templates.xml"
+  ["local_import_template_homepage"]=>
+  string(100) "F:\Project\wordpress/wp-content/themes/autusin/lib/import/demo-1/demo-content-homepage-templates.xml"
+  ["local_import_revslider"]=>
+  array(1) {
+    ["slide1"]=>
+    string(79) "F:\Project\wordpress/wp-content/themes/autusin/lib/import/demo-1/slideshow1.zip"
+  }
+  ["local_import_options"]=>
+  array(1) {
+    [0]=>
+    array(2) {
+      ["file_path"]=>
+      string(82) "F:\Project\wordpress/wp-content/themes/autusin/lib/import/demo-1/theme_options.txt"
+      ["option_name"]=>
+      string(13) "autusin_theme"
+    }
+  }
+  ["menu_locate"]=>
+  array(3) {
+    ["primary_menu"]=>
+    string(12) "Primary Menu"
+    ["vertical_menu"]=>
+    string(13) "Vertical Menu"
+    ["mobile_menu1"]=>
+    string(11) "Mobile Menu"
+  }
+  ["import_preview_image_url"]=>
+  string(71) "http://wordpress.info/wp-content/themes/autusin/lib/import/demo-1/1.jpg"
+  ["import_notice"]=>
+  string(115) "After you import this demo, you will have to setup the slider separately. This import maybe finish on 10-15 minutes"
+  ["preview_url"]=>
+  string(45) "https://demo.wpthemego.com/themes/sw_autusin/"
+}
+
