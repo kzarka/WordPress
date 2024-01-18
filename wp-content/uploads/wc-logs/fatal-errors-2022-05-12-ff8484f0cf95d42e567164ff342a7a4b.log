@@ -1,2 +1,0 @@
-2022-05-12T15:33:12+00:00 CRITICAL syntax error, unexpected end of file, expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in F:\Project\wordpress\wp-content\themes\main-theme\app\views\components\product-card.php on line 70
-

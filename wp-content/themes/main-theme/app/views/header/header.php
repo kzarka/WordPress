@@ -1,1 +1,0 @@
-<?php renderTemplate('header/navbar/navbar'); ?>
